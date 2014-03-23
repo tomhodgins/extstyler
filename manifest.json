@@ -24,7 +24,7 @@
 
   "content_scripts": [
     {
-      "matches": ["http://*/*"],
+      "matches": ["http://*/*", "https://*/*"],
       "css": ["src/custom.css"],
       "js": ["src/extstyler.js"]
     }

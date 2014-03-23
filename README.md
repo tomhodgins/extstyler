@@ -36,3 +36,23 @@ Once you have made a change to any of your extensions and you wish to view these
 - press your browser's reload button in the toolbar
 - use the keyboard shortcut CTRL-R (or ⌘-R on OS X)
 - click the 'Reload' link at the bottom of the extension description
+
+## How to add styles
+
+Extstyler has some built-in smarts that make it easy to add custom styles to just one website (instead of applying to every website you visit while the extension is enabled). Extstyler will automatically add 2 classes to the `<html>` tag of any site it loads: `extstyler` and a simple version of the domain name where the site is being accessed. This means you could target every webpage in your browser with a rule like:
+
+```
+a {
+  color: green;
+}
+```
+
+But if you only wanted to change the `<a>` tags on a site like https://github.com we can expect the `<html>` tag to look something like: `<html class=" extstyler github"`. You could target just those pages by adding `html.extstyler.github` before your CSS rule to make it apply only to sites where the `<html>` tag includes the classes `extstyler` and `github` for example:
+
+```
+html.extstyler.github a {
+  color: green;
+}
+```
+
+This means within the one CSS file you have the freedom to be able to combine browser-wide style overrides that alter every page the user visits, as well as site-specific rules for one or more sites that will only apply when you are on those pages without showing up elsewhere.
