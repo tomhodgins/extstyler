@@ -12,7 +12,7 @@
 
   "content_scripts": [
     {
-      "matches": ["*://*/*"],
+      "matches": ["*://*/*", "file://*/*"],
       "css": ["src/custom.css"],
       "js": ["src/jquery-latest.js", "src/extstyler.js"]
     }
