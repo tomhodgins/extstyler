@@ -1,1 +1,0 @@
-(document).getElementsByTagName('html')[0].className+= ' extstyler ' + window.location.hostname.split('.').reverse()[1];
